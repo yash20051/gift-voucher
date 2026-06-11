@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <!-- Definitions for Gradients and Filters -->
+  <defs>
+    <!-- Background Gradient for the Gift Box Base -->
+    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Gradient for the Heart/Bow -->
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <!-- Gradient for the Ribbon -->
+    <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Shadow for Depth -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Main Logo Group -->
+  <g filter="url(#softShadow)">
+    <!-- Base of the Gift Box -->
+    <rect x="35" y="60" width="50" height="42" rx="8" fill="url(#boxGradient)" />
+    
+    <!-- Lid of the Gift Box -->
+    <rect x="30" y="50" width="60" height="12" rx="4" fill="#1e1b4b" />
+    
+    <!-- Vertical Ribbon (Cyan/Blue Gradient) -->
+    <rect x="56" y="50" width="8" height="52" fill="url(#ribbonGradient)" />
+    
+    <!-- Horizontal Ribbon on Base -->
+    <rect x="35" y="76" width="50" height="8" fill="url(#ribbonGradient)" />
+
+    <!-- Heart Bow (Top of the Box) -->
+    <!-- We combine two heart loops sharing a base at (60, 50) -->
+    <!-- Left Loop -->
+    <path d="M60,50 C60,50 50,30 38,30 C26,30 20,38 23,50 C26,62 60,70 60,70 Z" fill="url(#heartGradient)" opacity="0.95" />
+    
+    <!-- Right Loop -->
+    <path d="M60,50 C60,50 70,30 82,30 C94,30 100,38 97,50 C94,62 60,70 60,70 Z" fill="url(#heartGradient)" opacity="0.95" />
+    
+    <!-- White Inner Ribbons for Ribbon Highlight -->
+    <path d="M60,50 C54,40 40,36 40,44 C40,48 50,52 60,50" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+    <path d="M60,50 C66,40 80,36 80,44 C80,48 70,52 60,50" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Center Knot of the Bow -->
+    <circle cx="60" cy="50" r="6" fill="#ffffff" />
+    <circle cx="60" cy="50" r="3.5" fill="url(#heartGradient)" />
+  </g>
+</svg>
