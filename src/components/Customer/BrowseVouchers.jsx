@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, Filter, X } from 'lucide-react';
 import './Customer.css';
 
 const BrowseVouchers = ({ user }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState(location.state?.searchQuery || '');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
   const [showFilters, setShowFilters] = useState(false);
@@ -128,6 +129,12 @@ const BrowseVouchers = ({ user }) => {
       setVouchers(defaultList.filter(v => v.active === true || v.status === 'active'));
     }
   }, []);
+
+  useEffect(() => {
+    if (location.state?.searchQuery !== undefined) {
+      setSearchQuery(location.state.searchQuery);
+    }
+  }, [location.state]);
 
   const filteredVouchers = vouchers.filter((voucher) => {
     const matchesSearch = voucher.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
