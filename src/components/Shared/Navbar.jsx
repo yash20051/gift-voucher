@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Gift, Menu, X, User, LogOut, Home, ShoppingBag, Wallet, Users, Building, BarChart2 } from 'lucide-react';
+import { Gift, Menu, X, User, LogOut, Home, ShoppingBag, Wallet, Users, Building, BarChart2, MessageSquare } from 'lucide-react';
 import './Shared.css';
 
 const Navbar = ({ user, onLogout }) => {
@@ -15,7 +15,8 @@ const Navbar = ({ user, onLogout }) => {
           { path: '/customer', label: 'Dashboard', icon: <Home size={18} /> },
           { path: '/customer/browse', label: 'Browse', icon: <ShoppingBag size={18} /> },
           { path: '/customer/wallet', label: 'Wallet', icon: <Wallet size={18} /> },
-          { path: '/customer/history', label: 'History', icon: <BarChart2 size={18} /> }
+          { path: '/customer/history', label: 'History', icon: <BarChart2 size={18} /> },
+          { path: '/customer/support', label: 'Support', icon: <MessageSquare size={18} /> }
         ];
       case 'provider':
         return [
@@ -23,7 +24,8 @@ const Navbar = ({ user, onLogout }) => {
           { path: '/provider/services', label: 'Services', icon: <ShoppingBag size={18} /> },
           { path: '/provider/vouchers', label: 'Vouchers', icon: <Gift size={18} /> },
           { path: '/provider/redemptions', label: 'Redemptions', icon: <Users size={18} /> },
-          { path: '/provider/reports', label: 'Reports', icon: <BarChart2 size={18} /> }
+          { path: '/provider/reports', label: 'Reports', icon: <BarChart2 size={18} /> },
+          { path: '/provider/support', label: 'Support', icon: <MessageSquare size={18} /> }
         ];
       case 'admin':
         return [
@@ -31,7 +33,8 @@ const Navbar = ({ user, onLogout }) => {
           { path: '/admin/providers', label: 'Providers', icon: <Building size={18} /> },
           { path: '/admin/customers', label: 'Customers', icon: <Users size={18} /> },
           { path: '/admin/vouchers', label: 'Vouchers', icon: <Gift size={18} /> },
-          { path: '/admin/reports', label: 'Reports', icon: <BarChart2 size={18} /> }
+          { path: '/admin/reports', label: 'Reports', icon: <BarChart2 size={18} /> },
+          { path: '/admin/support', label: 'Support', icon: <MessageSquare size={18} /> }
         ];
       default:
         return [];
